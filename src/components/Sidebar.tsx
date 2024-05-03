@@ -99,8 +99,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             {user.fullName !== "" &&
             <>
             <div className="flex gap-5 pb-8 pt-3">
-              <Link to="/dashboard/deposit" className="w-full text-white bg-[#2a8f47] hover:bg-[#4ECB71] font-medium rounded-lg text-sm px-5 py-2.5 text-center">Deposit</Link>
-              <Link to="/dashboard/withdrawal" className="w-full text-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center border border-red-500">Withdrawal</Link>
+              <Link to="/dashboard/deposit" className="w-full text-white bg-[#0085FF] hover:bg-[#4ECB71] font-medium rounded-lg text-sm px-5 py-2.5 text-center">Deposit</Link>
+              <Link to="/dashboard/withdrawal" className="w-full text-[#CC1335] font-medium rounded-lg text-sm px-5 py-2.5 text-center border border-[#CC1335]">Withdrawal</Link>
             </div>
 
               <ul className="mb-6 flex flex-col gap-1.5">
