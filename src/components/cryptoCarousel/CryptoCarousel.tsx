@@ -42,7 +42,6 @@ const CryptoCarousel: React.FC = () => {
 
 
 
-
   return (
     <section className={s.ctn} id='slide'>
       <div className={s.wrp}>
