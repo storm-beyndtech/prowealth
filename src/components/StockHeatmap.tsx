@@ -4,9 +4,10 @@ const StockHeatmap: FC = () => {
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js";
-    script.type = "text/javascript";
+    const script = document.createElement('script');
+    script.src =
+      'https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js';
+    script.type = 'text/javascript';
     script.async = true;
     script.innerHTML = `
       {
@@ -26,16 +27,18 @@ const StockHeatmap: FC = () => {
         "height": "100%"
       }`;
 
-  
-      if (container.current) {
-        container.current.innerHTML = "";
-        container.current.appendChild(script);
-      }
+    if (container.current) {
+      container.current.innerHTML = '';
+      container.current.appendChild(script);
+    }
   }, []);
 
   return (
-    <section className='h-screen min-h-[600px]'>
-      <div className="tradingview-widget-container m-auto max-ctn rounded-xl overflow-hidden" ref={container}>
+    <section className="h-[80vh] min-h-[350px] px-5">
+      <div
+        className="tradingview-widget-container m-auto max-ctn rounded-xl overflow-hidden"
+        ref={container}
+      >
         <div className="tradingview-widget-container__widget"></div>
       </div>
     </section>

@@ -7,6 +7,7 @@ import logo from '../assets/logo.svg'
 import { MenuGroup, menuItems } from '@/lib/utils';
 import { PiUserLight } from "react-icons/pi";
 import { contextData } from '@/context/AuthContext';
+import { Helmet } from "react-helmet";
 
 
 
@@ -88,71 +89,85 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="fixed w-full top-0 left-0 z-40 backdrop-blur-md" id='navBar'>
-      <nav className="max-ctn flex items-center justify-between p-5">
-        <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
-            <img className="h-5 w-auto" src={logo} alt="logo" />
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="flex lg:hidden">
-          <button
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6"/>
-          </button>
-        </div>
-
-        {/* Desktop Menu */}
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <MenuList items={menuItems} />
-        </Popover.Group>
-
-        {user ? 
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-6">
-          <Link to="/dashboard" className="border border-white/20 px-4 py-2 !rounded-lg text-sm font-medium text-gray-100 flex items-center gap-2">
-            Dashboard <span className="ml-3"><PiUserLight /></span>
-          </Link>
-        </div> :
-
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-6">
-          <Link to="/register" className="border border-white/20 px-4 py-2 !rounded-lg text-sm font-medium text-gray-100 flex items-center gap-2">
-            Register <span className="ml-3"><PiUserLight /></span>
-          </Link>
-
-          <Link to="/login" className="text-sm font-medium leading-6 text-gray-100">
-            Log in <span className="ml-3" aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
-        }
-      </nav>
-
-      {/* Mobile Menu Dialog */}
-      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
-        <div className="fixed inset-0 z-10"></div>
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <Link to="/">
-              <img className="h-8 w-auto mb-5" src={logo} alt="logo" />
+    <>
+    <Helmet>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+          {`
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+          `}
+        </script>
+      </Helmet>
+      <header className="fixed w-full top-0 left-0 z-40 backdrop-blur-md" id='navBar'>
+        <nav className="max-ctn flex items-center justify-between p-5">
+          <div className="flex lg:flex-1">
+            <Link to="/" className="-m-1.5 p-1.5">
+              <img className="h-5 w-auto" src={logo} alt="logo" />
             </Link>
+          </div>
 
+          <div id="google_translate_element" className='mr-5'></div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex lg:hidden">
             <button
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(true)}
             >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6"/>
             </button>
           </div>
-          <MenuList items={menuItems}/>
-          {user && <MenuList items={dashboard}/>}
-          {!user && <MenuList items={auth}/>}
-        </Dialog.Panel>
-      </Dialog>
-    </header>
+
+          {/* Desktop Menu */}
+          <Popover.Group className="hidden lg:flex lg:gap-x-12">
+            <MenuList items={menuItems} />
+          </Popover.Group>
+
+          {user ? 
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-6">
+            <Link to="/dashboard" className="border border-white/20 px-4 py-2 !rounded-lg text-sm font-medium text-gray-100 flex items-center gap-2">
+              Dashboard <span className="ml-3"><PiUserLight /></span>
+            </Link>
+          </div> :
+
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-6">
+            <Link to="/register" className="border border-white/20 px-4 py-2 !rounded-lg text-sm font-medium text-gray-100 flex items-center gap-2">
+              Register <span className="ml-3"><PiUserLight /></span>
+            </Link>
+
+            <Link to="/login" className="text-sm font-medium leading-6 text-gray-100">
+              Log in <span className="ml-3" aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+          }
+        </nav>
+
+        {/* Mobile Menu Dialog */}
+        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
+          <div className="fixed inset-0 z-10"></div>
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className="flex items-center justify-between">
+              <Link to="/">
+                <img className="h-8 w-auto mb-5" src={logo} alt="logo" />
+              </Link>
+
+              <button
+                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <MenuList items={menuItems}/>
+            {user && <MenuList items={dashboard}/>}
+            {!user && <MenuList items={auth}/>}
+          </Dialog.Panel>
+        </Dialog>
+      </header>
+    </>
   );
 }

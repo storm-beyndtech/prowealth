@@ -1,6 +1,6 @@
 import CheckList from "./CheckList";
-import image1 from "../assets/hero.webp"
-import image2 from "../assets/image-2.png"
+import image1 from "../assets/WB-Copy-Trading.webp"
+import image2 from "../assets/image.webp"
 
 export default function CardOne() {
   return (
@@ -11,7 +11,7 @@ export default function CardOne() {
 
       <div className="flex flex-wrap justify-center gap-8">
 
-        <div className="w-full sm:max-w-70 rounded-2xl border border-gray-200 shadow-1 flex flex-col gap-7">
+        <div className="w-full sm:max-w-70 rounded-2xl border border-gray-200 shadow-1 flex flex-col gap-7 overflow-y-hidden">
           <h2 className="text-xl p-6 font-semibold text-gray-900">Expert Traders</h2>
 
           <ul className="space-y-2 sm:space-y-4 px-4">
@@ -29,7 +29,7 @@ export default function CardOne() {
             </li>
           </ul>
 
-          <img src={image1} alt="Expert Traders" className="w-full h-70 object-contain object-center"/>
+          <img src={image1} alt="Expert Traders" className="w-full h-50 object-cover object-center"/>
         </div>
 
         <div className="w-full sm:max-w-70 rounded-2xl border border-gray-200 shadow-1 flex flex-col gap-7 overflow-hidden">
@@ -50,19 +50,19 @@ export default function CardOne() {
             </li>
           </ul>
 
-          <video autoPlay loop muted playsInline className="w-full h-70 object-cover">
+          <video autoPlay loop muted playsInline className="w-full h-50 object-cover">
             <source src="https://naga.com/images/new-main-page/why-choose-naga/video-new.mp4" type="video/mp4" />
             video
           </video>
         </div>
 
-        <div className="w-full sm:max-w-70 rounded-2xl border border-gray-200 shadow-1 flex flex-col gap-7">
+        <div className="w-full sm:max-w-70 rounded-2xl border border-gray-200 shadow-1 flex flex-col gap-7 overflow-y-hidden">
           <h2 className="text-xl p-6 font-semibold text-gray-900">Multi-Asset</h2>
 
           <ul className="space-y-2 sm:space-y-4 px-4">
             <li className="flex space-x-3">
               <CheckList />
-              <span className="text-sm text-gray-800 font-satoshi font-semibold">CFD's on FX, Indices, Metals. Commodities</span>
+              <span className="text-xs text-gray-800 font-satoshi font-semibold">CFD's, Indices, Metals, Commodities</span>
             </li>
             <li className="flex space-x-3">
               <CheckList />
@@ -74,7 +74,7 @@ export default function CardOne() {
             </li>
           </ul>
 
-          <img src={image2} alt="Expert Traders" className="w-full h-70 object-cover object-center"/>
+          <img src={image2} alt="Expert Traders" className="w-full h-50 object-cover"/>
         </div>
 
       </div>

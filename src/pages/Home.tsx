@@ -1,5 +1,4 @@
 import AutoCount from "@/components/AutoCount";
-import BlackSection from "@/components/BlackSection";
 import FAQ from "@/components/FAQ";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
@@ -36,9 +35,8 @@ export default function Home() {
       <CryptoCarousel />
       <DarkSection />
       <Pricing />
-      <StockHeatmap />
       <LightSection secData={HomeSec2}/>
-      <BlackSection />
+      <StockHeatmap />
       <SpreadSteps />
       <Testimonials data={testimonies}/>
       <WideCard />
