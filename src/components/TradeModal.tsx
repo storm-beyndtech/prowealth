@@ -17,7 +17,7 @@ export default function TradeModal({tradeType, toggleModal}:any) {
     setError('')
 
     if(tradeType === 'standard') {
-      if(amount < 3000) return setError("The minimum trade amount is $3000")
+      if(amount < 500) return setError("The minimum trade amount is $500")
     }
 
     if(tradeType === 'advanced') {
@@ -29,17 +29,19 @@ export default function TradeModal({tradeType, toggleModal}:any) {
     }
 
     if(tradeType === 'btc') {
-      if(amount < 43000) return setError("The minimum trade amount is $43000")
+      if(amount < 67000) return setError("The minimum trade amount is $67000")
     }
+    
+    if (amount > user.deposit) return setError("Insufficient balance, deposit and try again later");
 
     setLoading(true)
     setSuccess(false)
 
     try {
-      const res = await fetch(`${url}/trades`, {
+      const res = await fetch(`${url}/trades/user/${user._id}`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ id: user._id, amount, package: tradeType })
+        body: JSON.stringify({ interest: 0, amount, package: tradeType })
       })
       const data = await res.json()
 

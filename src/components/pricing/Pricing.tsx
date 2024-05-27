@@ -28,7 +28,7 @@ export default function Pricing() {
     if (!user) {
       navigate('/login');
     } else {
-      navigate('/dashboard');
+      setShowModal(true);
     }
   };
 

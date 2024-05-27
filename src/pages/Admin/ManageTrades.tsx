@@ -70,7 +70,10 @@ export default function ManageTrades() {
               <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
                   <tr>
                       <th scope="col" className="px-6 py-3 rounded-s-lg">
-                          Type
+                          User
+                      </th>
+                      <th scope="col" className="px-6 py-3 rounded-s-lg">
+                          Type/Amount
                       </th>
                       <th scope="col" className="px-6 py-3">
                           Date
@@ -87,8 +90,22 @@ export default function ManageTrades() {
               <tbody>
                 {trades.length > 0 && trades.map((trade:ITransaction, i:number) =>
                   <tr className="bg-white dark:bg-gray-800" key={i}>
+                    <th scope="row" className="flex items-center px-5 py-3 text-gray-900 whitespace-nowrap dark:text-white">
+                  <img className="w-10 h-10 rounded-full bg-[#E2FFD7]/10" src={`https://robohash.org/${trade.user?.id}`} alt="Avatar" />
+                    <div className="ps-3">
+                        <div className="text-xs font-semibold">
+                          {trade.user.name!.length > 17 && trade.user.name?.slice(0, 15) + "..."} 
+                          {trade.user.name!.length < 17 && trade.user.name}
+                        </div>
+                        <div className="text-xs font-medium text-gray-500">
+                          {trade.user.email!.length > 17 && trade.user.email?.slice(0, 15) + "..."} 
+                          {trade.user.email!.length < 17 && trade.user.email} 
+                        </div>
+                    </div>  
+                </th>
                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {trade.tradeData.package}
+                      {trade.tradeData.package}<br />
+                      ${trade.amount}
                     </th>
                     <td className="px-6 py-4 max-sm:text-[10px] min-w-28">
                         {trade.date.slice(0, 10)}

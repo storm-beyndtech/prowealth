@@ -11,12 +11,11 @@ export default function Trades() {
 
   const fetchTrades = async () => {
     try {
-      const res = await fetch(`${url}/trades`);
+      const res = await fetch(`${url}/trades/user/${user._id}`);
       const data = await res.json();
   
       if (res.ok) {
-        const filteredTrades = data.filter((trade:any) => new Date(trade.date) > new Date(user.createdAt));
-        setTradeData(filteredTrades);
+        setTradeData(data);
       } else {
         throw new Error(data.message);
       }
