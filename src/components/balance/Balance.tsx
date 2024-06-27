@@ -20,7 +20,7 @@ export default function Balance({type, user}: BalanceProps) {
     
   const handleCopy = async (textToCopy:string) => {
     try {
-      await navigator.clipboard.writeText(`https://prowealth-inc.com/register/${textToCopy}`);
+      await navigator.clipboard.writeText(`https://www.prowealth-inc.com/register/${textToCopy}`);
       alert('Text copied to clipboard');
     } catch (err) {
       console.log('Failed to copy text: ', err);
