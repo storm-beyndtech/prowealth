@@ -14,17 +14,18 @@ export default function Pricing() {
   const location = useLocation();
   const isDashboardRoute = location.pathname.includes('dashboard');
   const [tradeType, setTradeType] = useState('');
+  const [interest, setInterest] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const { user } = contextData();
   const navigate = useNavigate();
 
   const toggleModal = (bool: boolean) => {
-    console.log(bool);
     setShowModal(bool);
   };
 
-  const handleInvest = (plan: string) => {
+  const handleInvest = (plan: string, interestRate: number) => {
     setTradeType(plan);
+    setInterest(interestRate);
     if (!user) {
       navigate('/login');
     } else {
@@ -145,7 +146,7 @@ export default function Pricing() {
               </div>
               <button
                 className={`${isDashboardRoute && 'dark:!bg-gray-300'}`}
-                onClick={() => handleInvest('standard')}
+                onClick={() => handleInvest('standard', plan.pips.min)}
               >
                 Start Trade
               </button>
@@ -198,7 +199,7 @@ export default function Pricing() {
               </div>
               <button
                 className={`${isDashboardRoute && 'dark:!bg-gray-300'}`}
-                onClick={() => handleInvest('advanced')}
+                onClick={() => handleInvest('advanced', plan.pips.min)}
               >
                 Start Trade
               </button>
@@ -251,7 +252,7 @@ export default function Pricing() {
               </div>
               <button
                 className={`${isDashboardRoute && 'dark:!bg-gray-300'}`}
-                onClick={() => handleInvest('nfp')}
+                onClick={() => handleInvest('nfp', plan.pips.min)}
               >
                 Start Trade
               </button>
@@ -304,7 +305,7 @@ export default function Pricing() {
               </div>
               <button
                 className={`${isDashboardRoute && 'dark:!bg-gray-300'}`}
-                onClick={() => handleInvest('btc')}
+                onClick={() => handleInvest('btc', plan.pips.min)}
               >
                 Start Trade
               </button>
@@ -329,7 +330,7 @@ export default function Pricing() {
         </div>
       )}
       {showModal && (
-        <TradeModal tradeType={tradeType} toggleModal={toggleModal} />
+        <TradeModal tradeType={tradeType} toggleModal={toggleModal} interestRate={interest} />
       )}
     </section>
   );

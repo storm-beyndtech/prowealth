@@ -79,24 +79,24 @@ export const menuItems: MenuGroup[] = [
 export const standardPlan = [
   {
     pips: {
-      min: 20,
-      max: 25
+      min: 10,
+      max: 15
     },
     title: "STANDARD",
     truepoints: ["Minimum: ﹩500", "Maximum: ﹩4,999", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 25,
-      max: 30
+      min: 15,
+      max: 20
     },
     title: "MASTER",
     truepoints: ["Minimum: ﹩5,000", "Maximum: ﹩9,999", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 30,
-      max: 35
+      min: 20,
+      max: 25
     },
     title: "PREMIUM",
     truepoints: ["Minimum: ﹩10,000", "Maximum: ﹩19,999", "10% Trade Commission", "24/7 active support"],
@@ -104,15 +104,15 @@ export const standardPlan = [
   {
     title: "ULTIMATE",
     pips: {
-      min: 35,
-      max: 40
+      min: 25,
+      max: 30
     },
     truepoints: ["Minimum: ﹩20,000", "Maximum: ﹩49,999", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 40,
-      max: 45
+      min: 30,
+      max: 35
     },
     title: "CORPORATE",
     truepoints: ["Minimum: ﹩50,000", "Maximum: Unlimited", "10% Trade Commission", "24/7 active support"],
@@ -123,24 +123,24 @@ export const standardPlan = [
 export const advancedPlan = [
   {
     pips: {
-      min: 30,
-      max: 40
+      min: 15,
+      max: 20
     },
     title: "STANDARD",
     truepoints: ["Minimum: ﹩1,000", "Maximum: ﹩9,999", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 40,
-      max: 45
+      min: 20,
+      max: 25
     },
     title: "MASTER PLUS",
     truepoints: ["Minimum: ﹩10,000", "Maximum: ﹩19,999", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 50,
-      max: 60
+      min: 25,
+      max: 30
     },
     title: "PREMIUM",
     truepoints: ["Minimum: ﹩20,000", "Maximum: ﹩49,999", "10% Trade Commission", "24/7 active support"],
@@ -148,15 +148,15 @@ export const advancedPlan = [
   {
     title: "ULTIMATE",
     pips: {
-      min: 60,
-      max: 70
+      min: 30,
+      max: 35
     },
     truepoints: ["Minimum: ﹩50,000", "Maximum: ﹩99,999", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 70,
-      max: 80
+      min: 35,
+      max: 40
     },
     title: "CORPORATE",
     truepoints: ["Minimum: ﹩100,000", "Maximum: Unlimited", "10% Trade Commission", "24/7 active support"],
@@ -167,15 +167,15 @@ export const advancedPlan = [
 export const NFP = [
   {
     pips: {
-      min: 100,
-      max: 124
+      min: 20,
+      max: 25
     },
     title: "STARTER",
     truepoints: ["Minimum: ﹩50,000", "Maximum: ﹩99,999", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 150,
+      min: 25,
       max: undefined
     },
     title: "PREMIUM",
@@ -183,7 +183,7 @@ export const NFP = [
   },
   {
     pips: {
-      min: 200,
+      min: 30,
       max: undefined
     },
     title: "ULTIMATE",
@@ -195,32 +195,32 @@ export const NFP = [
 export const BTC = [
   {
     pips: {
-      min: 65,
-      max: 70
+      min: 25,
+      max: 30
     },
     title: "BASIC",
     truepoints: ["1 - 1.5 BTC", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 70,
-      max: 75
+      min: 30,
+      max: 35
     },
     title: "STANDARD",
     truepoints: ["5 - 14.9 BTC", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 80,
-      max: 85
+      min: 35,
+      max: 40
     },
     title: "PREMIUM",
     truepoints: ["15 - 29.9 BTC", "10% Trade Commission", "24/7 active support"],
   },
   {
     pips: {
-      min: 90,
-      max: 95
+      min: 40,
+      max: 45
     },
     title: "PRO",
     truepoints: ["30+ BTC", "10% Trade Commission", "24/7 active support"],

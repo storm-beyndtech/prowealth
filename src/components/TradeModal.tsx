@@ -2,7 +2,7 @@ import { contextData } from "@/context/AuthContext";
 import { useState } from "react";
 import s from '../pages/login/Login.module.css'
 
-export default function TradeModal({tradeType, toggleModal}:any) {
+export default function TradeModal({tradeType, toggleModal, interestRate}:any) {
   const [amount, setAmount] = useState(0)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -41,7 +41,7 @@ export default function TradeModal({tradeType, toggleModal}:any) {
       const res = await fetch(`${url}/trades/user/${user._id}`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ interest: 0, amount, package: tradeType })
+        body: JSON.stringify({ interest: interestRate, amount, package: tradeType })
       })
       const data = await res.json()
 
