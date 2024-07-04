@@ -37,11 +37,13 @@ export default function TradeModal({tradeType, toggleModal, interestRate}:any) {
     setLoading(true)
     setSuccess(false)
 
+    const interest = interestRate/100
+
     try {
       const res = await fetch(`${url}/trades/user/${user._id}`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ interest: interestRate, amount, package: tradeType })
+        body: JSON.stringify({ interest, amount, package: tradeType })
       })
       const data = await res.json()
 

@@ -126,7 +126,7 @@ import logo from '../assets/logo.svg'
               </Link>
             </div>
             <p className="font-inter text-sm text-gray-500 lg:mt-0">
-              © Copyright 2021. All rights reserved.
+              © Copyright 2024. All rights reserved.
             </p>
           </div>
         </div>
